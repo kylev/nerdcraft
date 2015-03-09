@@ -1,0 +1,12 @@
+[
+{
+  "modid": "NerdCraft",
+  "name": "Nerd Craft",
+  "description": "Crafting... for nerds!",
+  "version": "0.1.0",
+  "authorList": [
+    "kylev"
+  ],
+  "credits": "My brain, and Pahimar!"
+}
+]
