@@ -1,14 +1,20 @@
 package com.kylev.nerdcraft;
 
+import com.kylev.nerdcraft.proxy.IProxy;
+import com.kylev.nerdcraft.reference.Reference;
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = "NerdCraft", name = "Nerd Craft", version = "1.7.2-0.1.0")
+@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class NerdCraft {
-    @Mod.Instance("NerdCraft")
+    @Mod.Instance(Reference.MOD_ID)
     public static NerdCraft instance;
+
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
+    public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
