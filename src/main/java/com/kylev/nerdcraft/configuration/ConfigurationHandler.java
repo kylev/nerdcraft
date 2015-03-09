@@ -13,8 +13,10 @@ public class ConfigurationHandler {
 
             boolean configValue = configuration.get(Configuration.CATEGORY_GENERAL, "configValue", true, "This is an example config value.").getBoolean();
         } finally {
-            // Rewrite configuration file with fleshed out values.
-            configuration.save();
+            // Conditionally rewrite configuration file with fleshed out values.
+            if (configuration.hasChanged()) {
+                configuration.save();
+            }
         }
     }
 }
