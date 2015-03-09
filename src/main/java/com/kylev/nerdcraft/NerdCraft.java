@@ -1,5 +1,6 @@
 package com.kylev.nerdcraft;
 
+import com.kylev.nerdcraft.configuration.ConfigurationHandler;
 import com.kylev.nerdcraft.proxy.IProxy;
 import com.kylev.nerdcraft.reference.Reference;
 import cpw.mods.fml.common.Mod;
@@ -18,7 +19,7 @@ public class NerdCraft {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-
+        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
