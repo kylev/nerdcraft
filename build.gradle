@@ -18,8 +18,8 @@ buildscript {
 apply plugin: 'forge'
 
 version = "0.1.0"
-group = "com.kylev.nerdcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "nerdcraft"
+group = "com.kylev.nerdingcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+archivesBaseName = "nerdingcraft"
 
 minecraft {
     version = "1.7.10-10.13.2.1291"

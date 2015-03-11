@@ -1,8 +1,8 @@
-package com.kylev.nerdcraft;
+package com.kylev.nerdingcraft;
 
-import com.kylev.nerdcraft.configuration.ConfigurationHandler;
-import com.kylev.nerdcraft.proxy.IProxy;
-import com.kylev.nerdcraft.reference.Reference;
+import com.kylev.nerdingcraft.configuration.ConfigurationHandler;
+import com.kylev.nerdingcraft.proxy.IProxy;
+import com.kylev.nerdingcraft.reference.Reference;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;

@@ -1,4 +1,4 @@
-package com.kylev.nerdcraft.configuration;
+package com.kylev.nerdingcraft.configuration;
 
 import net.minecraftforge.common.config.Configuration;
 
