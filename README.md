@@ -1,4 +1,4 @@
-# NerdCraft
+# NerdingCraft
 
 This is a sandbox for understanding [Minecraft Forge](http://minecraftforge.net), its 
 [Gradle](http://gradle.org/) build system, and the Maven-backed dependency management.
