@@ -1,13 +1,10 @@
-[
-{
+[{
   "modid": "NerdingCraft",
   "name": "Nerding Craft",
-  "description": "Crafting... for nerds!",
+  "description": "A demonstration mod for teaching software dev processes.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "authorList": [
-    "kylev"
-  ],
+  "url": "https://github.com/kylev/nerdingcraft",
+  "authorList": ["kylev"],
   "credits": "My brain, and Pahimar!"
-}
-]
+}]
