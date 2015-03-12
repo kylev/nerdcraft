@@ -3,7 +3,8 @@
   "modid": "NerdingCraft",
   "name": "Nerding Craft",
   "description": "Crafting... for nerds!",
-  "version": "0.1.0",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
   "authorList": [
     "kylev"
   ],
