@@ -4,7 +4,7 @@
   "description": "A demonstration mod for teaching software dev processes.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "https://github.com/kylev/nerdingcraft",
+  "url": "http://kylev.github.io/nerdingcraft",
   "authorList": ["kylev"],
   "credits": "My brain, and Pahimar!"
 }]
