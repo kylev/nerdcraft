@@ -3,6 +3,7 @@ package com.kylev.nerdingcraft;
 import com.kylev.nerdingcraft.configuration.ConfigurationHandler;
 import com.kylev.nerdingcraft.proxy.IProxy;
 import com.kylev.nerdingcraft.reference.Reference;
+import com.kylev.nerdingcraft.util.LogHelper;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
@@ -19,16 +20,17 @@ public class NerdCraft {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        LogHelper.info("preInit");
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
+        LogHelper.info("init");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+        LogHelper.info("postInit");
     }
 }
