@@ -32,7 +32,7 @@ minecraft {
 
 curse {
     projectId = '228512'
-    apiKey = curseForgeApiKey
+    apiKey = project.hasProperty('curseForgeApiKey') ? project.curseForgeApiKey : ''
     releaseType = 'alpha'
 }
 
