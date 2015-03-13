@@ -16,6 +16,7 @@ buildscript {
 }
 
 apply plugin: 'forge'
+apply plugin: 'curseforge'
 
 version = "${minecraftVersion}-${modVersion}"
 group = "com.kylev.nerdingcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -27,6 +28,12 @@ minecraft {
 
     replaceIn "reference/Reference.java"
     replace "@VERSION@", modVersion
+}
+
+curse {
+    projectId = '228512'
+    apiKey = curseForgeApiKey
+    releaseType = 'alpha'
 }
 
 dependencies {
