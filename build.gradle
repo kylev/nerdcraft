@@ -17,12 +17,12 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "${minecraft_version}-${mod_version}"
+version = "${minecraftVersion}-${modVersion}"
 group = "com.kylev.nerdingcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "nerdingcraft"
 
 minecraft {
-    version = "${minecraft_version}-${forge_version}"
+    version = "${minecraftVersion}-${forgeVersion}"
     runDir = "eclipse"
 }
 
@@ -44,15 +44,15 @@ dependencies {
 
 processResources {
     // this will ensure that this task is redone when the versions change.
-    inputs.property "version", mod_version
-    inputs.property "mcversion", minecraft_version
+    inputs.property "version", modVersion
+    inputs.property "mcversion", minecraftVersion
 
     // replace stuff in mcmod.info, nothing else
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
 
         // replace version and mcversion
-        expand 'version': mod_version, 'mcversion': minecraft_version
+        expand 'version': modVersion, 'mcversion': minecraftVersion
     }
 
     // copy everything else, thats not the mcmod.info
