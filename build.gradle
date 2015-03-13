@@ -24,6 +24,9 @@ archivesBaseName = "nerdingcraft"
 minecraft {
     version = "${minecraftVersion}-${forgeVersion}"
     runDir = "eclipse"
+
+    replaceIn "reference/Reference.java"
+    replace "@VERSION@", modVersion
 }
 
 dependencies {
