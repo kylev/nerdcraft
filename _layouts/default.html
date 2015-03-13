@@ -7,10 +7,10 @@
 
     {% include nav.html %}
 
+
     <div class="container">
-      <div style="padding-top: 40px">
-        {{ content }}
-      </div>
+      {% if page.title %}<h2>{{ page.title }}</h2>{% endif %}
+      {{ content }}
     </div>
 
     {% include footer.html %}
