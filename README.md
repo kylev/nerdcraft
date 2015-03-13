@@ -1,4 +1,5 @@
 # NerdingCraft
+[![Build Status](https://travis-ci.org/kylev/nerdingcraft.svg)](https://travis-ci.org/kylev/nerdingcraft)
 
 This is a sandbox for understanding [Minecraft Forge](http://minecraftforge.net), its 
 [Gradle](http://gradle.org/) build system, and the Maven-backed dependency management.
