@@ -72,6 +72,8 @@ processResources {
 }
 
 // Create a deobfuscated .jar for other developers.
-task deobfJar(type: Jar) {
+task devJar(type: Jar) {
     from sourceSets.main.output
+    appendix 'deobf'
+}
 }
