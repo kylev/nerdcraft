@@ -17,6 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 apply plugin: 'curseforge'
+apply plugin: 'maven-publish'
 
 version = "${minecraftVersion}-${modVersion}"
 group = "com.kylev.nerdingcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
@@ -76,4 +77,20 @@ task devJar(type: Jar) {
     from sourceSets.main.output
     appendix 'deobf'
 }
+
+publishing {
+    repositories {
+        maven {
+            url project.mavenSiteRoot
+        }
+    }
+
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+            artifact devJar {
+                classifier 'deobf'
+            }
+        }
+    }
 }
