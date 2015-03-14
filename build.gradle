@@ -70,3 +70,8 @@ processResources {
         exclude 'mcmod.info'
     }
 }
+
+// Create a deobfuscated .jar for other developers.
+task deobfJar(type: Jar) {
+    from sourceSets.main.output
+}
