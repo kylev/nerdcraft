@@ -1,6 +1,8 @@
 *.iml
 *.ipr
 *.iws
+*.log
 out/
+tmp/
 .gradle/
 gradle-app.setting
