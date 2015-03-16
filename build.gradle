@@ -17,11 +17,10 @@ buildscript {
 
 apply plugin: 'forge'
 apply plugin: 'curseforge'
-apply plugin: 'maven-publish'
 
 version = "${minecraftVersion}-${modVersion}"
 group = "com.kylev.nerdingcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "nerdingcraft"
+archivesBaseName = "NerdingCraft"
 
 minecraft {
     version = "${minecraftVersion}-${forgeVersion}"
@@ -72,25 +71,31 @@ processResources {
     }
 }
 
-// Create a deobfuscated .jar for other developers.
 task devJar(type: Jar) {
     from sourceSets.main.output
-    appendix 'deobf'
+    classifier 'deobf'
 }
 
-publishing {
-    repositories {
-        maven {
-            url project.mavenSiteRoot
-        }
-    }
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
 
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            artifact devJar {
-                classifier 'deobf'
-            }
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives devJar
+    archives sourcesJar
+    archives javadocJar
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: project.hasProperty('mavenSiteRoot') ? project.mavenSiteRoot : '')
         }
     }
 }
