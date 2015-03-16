@@ -96,6 +96,21 @@ uploadArchives {
     repositories {
         mavenDeployer {
             repository(url: project.hasProperty('mavenSiteRoot') ? project.mavenSiteRoot : '')
+
+            pom {
+                project {
+                    scm {
+                        url 'https://github.com/kylev/nerdingcraft'
+                        connection 'scm:git:git://github.com/kylev/nerdingcraft.git'
+                        developerConnection 'scm:git:git@github.com:kylev/nerdingcraft.git'
+                    }
+
+                    issueManagement {
+                        system 'github'
+                        url 'https://github.com/kylev/nerdingcraft/issues'
+                    }
+                }
+            }
         }
     }
 }
