@@ -28,8 +28,9 @@ minecraft {
     runDir = "eclipse"
     mappings = "snapshot_20171003"
 
+    // Note, this only works from gradlew; IDE runners may not do this replacement (?)
     replaceIn "reference/Reference.java"
-    replace "@VERSION@", modVersion
+    replace "@VERSION@", project.modVersion
 }
 
 /*
