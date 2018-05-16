@@ -5,7 +5,7 @@ package com.kylev.nerdingcraft.reference;
  */
 public class Reference {
     /** The mod's ID. */
-    public static final String MOD_ID = "NerdingCraft";
+    public static final String MOD_ID = "nerdingcraft";
     /** The mod's human-readable name. */
     public static final String MOD_NAME = "Nerding Craft";
     public static final String VERSION = "@VERSION@";

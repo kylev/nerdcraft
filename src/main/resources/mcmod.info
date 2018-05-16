@@ -1,5 +1,5 @@
 [{
-  "modid": "NerdingCraft",
+  "modid": "nerdingcraft",
   "name": "Nerding Craft",
   "description": "A demonstration mod for teaching software dev processes.",
   "version": "${version}",
