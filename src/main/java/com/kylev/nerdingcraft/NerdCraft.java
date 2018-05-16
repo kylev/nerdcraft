@@ -3,15 +3,17 @@ package com.kylev.nerdingcraft;
 import com.kylev.nerdingcraft.configuration.ConfigurationHandler;
 import com.kylev.nerdingcraft.proxy.IProxy;
 import com.kylev.nerdingcraft.reference.Reference;
-import com.kylev.nerdingcraft.util.LogHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION)
 public class NerdCraft {
+    private static Logger logger;
+
     @Mod.Instance(Reference.MOD_ID)
     public static NerdCraft instance;
 
@@ -20,17 +22,18 @@ public class NerdCraft {
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info("preInit");
+        logger = event.getModLog();
+        logger.info("preInit");
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        LogHelper.info("init");
+        logger.info("init");
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        LogHelper.info("postInit");
+        logger.info("postInit");
     }
 }
