@@ -1,7 +1,7 @@
 package com.kylev.nerdingcraft.util;
 
 import com.kylev.nerdingcraft.reference.Reference;
-import cpw.mods.fml.common.FMLLog;
+import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 
 /**
