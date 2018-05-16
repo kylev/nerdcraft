@@ -1,40 +1,45 @@
 buildscript {
     repositories {
-        mavenCentral()
+        jcenter()
         maven {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
-        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 
-apply plugin: 'forge'
-apply plugin: 'curseforge'
+apply plugin: 'net.minecraftforge.gradle.forge'
+//apply plugin: 'curseforge'
 
-version = "${minecraftVersion}-${modVersion}"
+version = "${modVersion}"
 group = "com.kylev.nerdingcraft" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "NerdingCraft"
 
-minecraft {
-    version = "${minecraftVersion}-${forgeVersion}"
-    runDir = "eclipse"
-
-    replaceIn "reference/Reference.java"
-    replace "@VERSION@", modVersion
+sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
 }
 
+minecraft {
+    version = "${project.minecraftVersion}-${project.forgeVersion}"
+    runDir = "eclipse"
+    mappings = "snapshot_20171003"
+
+    // Note, this only works from gradlew; IDE runners may not do this replacement (?)
+    replaceIn "reference/Reference.java"
+    replace "@VERSION@", project.modVersion
+}
+
+/*
 curse {
     projectId = '228512'
     apiKey = project.hasProperty('curseForgeApiKey') ? project.curseForgeApiKey : ''
     releaseType = 'alpha'
 }
+*/
 
 dependencies {
     // you may put jars on which you depend on in ./libs
@@ -92,6 +97,7 @@ artifacts {
     archives javadocJar
 }
 
+/*
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -114,3 +120,4 @@ uploadArchives {
         }
     }
 }
+*/
