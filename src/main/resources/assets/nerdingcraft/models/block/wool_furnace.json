@@ -1,12 +1,12 @@
 {
   "parent": "block/cube",
   "textures": {
-    "particle": "nerdingcraft:blocks/wool_furnace",
-    "up": "blocks/dirt",
-    "down": "nerdingcraft:blocks/wool_furnace",
+    "particle": "blocks/gold_block",
+    "up": "blocks/gold_block",
+    "down": "blocks/gold_block",
     "north": "nerdingcraft:blocks/wool_furnace",
-    "south": "blocks/stone",
-    "east": "nerdingcraft:blocks/wool_furnace",
-    "west": "nerdingcraft:blocks/wool_furnace"
+    "south": "blocks/gold_block",
+    "east": "blocks/gold_block",
+    "west": "blocks/gold_block"
   }
 }
