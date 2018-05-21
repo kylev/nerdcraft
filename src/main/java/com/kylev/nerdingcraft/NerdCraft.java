@@ -28,6 +28,7 @@ public class NerdCraft {
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
         logger.info("FML pre init");
+        proxy.preInit(event);
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
 
