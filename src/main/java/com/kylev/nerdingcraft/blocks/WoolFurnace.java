@@ -9,5 +9,6 @@ import net.minecraft.block.material.Material;
 public class WoolFurnace extends Block {
     public WoolFurnace() {
         super(Material.CLOTH);
+        this.setCreativeTab(CreativeTabs.MISC);
     }
 }
