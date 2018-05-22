@@ -10,6 +10,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+@SideOnly(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
@@ -23,20 +24,15 @@ public class ClientProxy extends CommonProxy {
         registerBlockModel(NerdCraft.woolFurnace);
     }
 
-    @SideOnly(Side.CLIENT)
-    public static void registerBlockModel(Block block)
-    {
+    public static void registerBlockModel(Block block) {
         registerBlockModel(block, 0, block.getRegistryName().toString());
     }
 
-    @SideOnly(Side.CLIENT)
-    public static void registerBlockModel(Block block, int meta, String name)
-    {
+    public static void registerBlockModel(Block block, int meta, String name) {
         Item item = Item.getItemFromBlock(block);
         ModelResourceLocation model = new ModelResourceLocation(name, "inventory");
 
-        if(!name.equals(item.getRegistryName().toString()))
-        {
+        if (!name.equals(item.getRegistryName().toString())) {
             ModelBakery.registerItemVariants(item, model);
         }
 
