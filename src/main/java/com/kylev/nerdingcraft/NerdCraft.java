@@ -8,15 +8,11 @@ import com.kylev.nerdingcraft.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
 @Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = "[1.12.2]")
 public class NerdCraft {
-    public static Logger logger;
-
     @Mod.Instance(Reference.MOD_ID)
     public static NerdCraft instance;
 
@@ -26,6 +22,8 @@ public class NerdCraft {
     public static final Block smilingBlock = new SmilingBlock();
     public static final Block woolFurnace = new WoolFurnace();
 
+    public static Logger logger;
+
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
@@ -33,15 +31,4 @@ public class NerdCraft {
         proxy.preInit(event);
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
     }
-
-    @Mod.EventHandler
-    public void init(FMLInitializationEvent event) {
-        logger.info("FML init");
-    }
-
-    @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event) {
-        logger.info("FML post init");
-    }
-
 }
