@@ -7,10 +7,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
@@ -24,6 +27,12 @@ public class RegistryHandler {
     public static final List<Item> ALL_ITEMS = new ArrayList<Item>();
     public static final List<Block> ALL_BLOCKS = new ArrayList<Block>();
 //    public static final List<IRecipe> ALL_RECIPES = new ArrayList<IRecipe>();
+
+    @SubscribeEvent
+    public static void registerModelEvent(ModelRegistryEvent event)
+    {
+        NerdCraft.proxy.registerRenderers();
+    }
 
     @SubscribeEvent
     public static void registerBlockEvent(RegistryEvent.Register<Block> event) {
