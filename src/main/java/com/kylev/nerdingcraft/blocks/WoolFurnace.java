@@ -2,6 +2,7 @@ package com.kylev.nerdingcraft.blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
 
 /**
  * Created by kylev on 5/20/18.
