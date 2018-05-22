@@ -1,5 +1,6 @@
 package com.kylev.nerdingcraft;
 
+import com.kylev.nerdingcraft.blocks.SmilingBlock;
 import com.kylev.nerdingcraft.blocks.WoolFurnace;
 import com.kylev.nerdingcraft.configuration.ConfigurationHandler;
 import com.kylev.nerdingcraft.proxy.IProxy;
@@ -22,6 +23,7 @@ public class NerdCraft {
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
     public static IProxy proxy;
 
+    public static final Block smilingBlock = new SmilingBlock();
     public static final Block woolFurnace = new WoolFurnace();
 
     @Mod.EventHandler

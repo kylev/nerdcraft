@@ -26,11 +26,9 @@ import java.util.List;
 public class RegistryHandler {
     public static final List<Item> ALL_ITEMS = new ArrayList<Item>();
     public static final List<Block> ALL_BLOCKS = new ArrayList<Block>();
-//    public static final List<IRecipe> ALL_RECIPES = new ArrayList<IRecipe>();
 
     @SubscribeEvent
-    public static void registerModelEvent(ModelRegistryEvent event)
-    {
+    public static void registerModelEvent(ModelRegistryEvent event) {
         NerdCraft.proxy.registerRenderers();
     }
 
@@ -63,6 +61,7 @@ public class RegistryHandler {
     }
 
     static {
+        registerItemBlock(NerdCraft.smilingBlock, "smiling_block");
         registerItemBlock(NerdCraft.woolFurnace, "wool_furnace");
     }
 }

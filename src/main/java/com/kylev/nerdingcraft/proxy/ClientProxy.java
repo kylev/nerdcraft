@@ -21,6 +21,7 @@ public class ClientProxy extends CommonProxy {
     public void registerRenderers() {
         super.registerRenderers();
 
+        registerBlockModel(NerdCraft.smilingBlock);
         registerBlockModel(NerdCraft.woolFurnace);
     }
 
