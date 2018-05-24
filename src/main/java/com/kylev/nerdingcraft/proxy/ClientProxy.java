@@ -15,6 +15,7 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         NerdCraft.logger.info("In client-side pre-init");
+        super.preInit(event);
     }
 
     @Override
