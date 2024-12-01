@@ -16,6 +16,9 @@ import net.minecraftforge.registries.RegistryObject;
 
 import com.kylev.nerdingcraft.blocks.WoolFurnace;
 
+/**
+ * The main mod class for NerdingCraft.
+ */
 @Mod(NerdingCraft.MOD_ID)
 public class NerdingCraft {
     public static final String MOD_ID = "nerdingcraft";
@@ -26,11 +29,13 @@ public class NerdingCraft {
             NerdingCraft.MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerdingCraft.MOD_ID);
 
-    // Static registry objects
+    // A minimal block and item
     public static final RegistryObject<Block> SMILING_BLOCK = BLOCKS.register("smiling_block",
             () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.ICE)));
     public static final RegistryObject<Item> SMILING_BLOCK_ITEM = ITEMS.register("smiling_block",
             () -> new BlockItem(SMILING_BLOCK.get(), new Item.Properties().stacksTo(64)));
+
+    // A customized furnace
     public static final RegistryObject<Block> WOOL_FURNACE = BLOCKS.register("wool_furnace",
             () -> new WoolFurnace(BlockBehaviour.Properties.of().mapColor(MapColor.LAPIS)));
     public static final RegistryObject<Item> WOOL_FURNACE_ITEM = ITEMS.register("wool_furnace",
