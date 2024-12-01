@@ -14,7 +14,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import com.kylev.nerdingcraft.blocks.WoolFurnace;
+import com.kylev.nerdingcraft.block.WoolFurnace;
 
 /**
  * The main mod class for NerdingCraft.
@@ -27,7 +27,8 @@ public class NerdingCraft {
     // Registries
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
             NerdingCraft.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerdingCraft.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS,
+            NerdingCraft.MOD_ID);
 
     // A minimal block and item
     public static final RegistryObject<Block> SMILING_BLOCK = BLOCKS.register("smiling_block",
@@ -37,7 +38,7 @@ public class NerdingCraft {
 
     // A customized furnace
     public static final RegistryObject<Block> WOOL_FURNACE = BLOCKS.register("wool_furnace",
-            () -> new WoolFurnace(BlockBehaviour.Properties.of().mapColor(MapColor.LAPIS)));
+            () -> new WoolFurnace(BlockBehaviour.Properties.of().mapColor(MapColor.WOOL)));
     public static final RegistryObject<Item> WOOL_FURNACE_ITEM = ITEMS.register("wool_furnace",
             () -> new BlockItem(WOOL_FURNACE.get(), new Item.Properties().stacksTo(16)));
 

@@ -1,4 +1,4 @@
-package com.kylev.nerdingcraft.blocks;
+package com.kylev.nerdingcraft.block;
 
 import net.minecraft.world.level.block.FurnaceBlock;
 
