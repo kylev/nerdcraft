@@ -14,17 +14,17 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import com.kylev.nerdingcraft.reference.Reference;
 import com.kylev.nerdingcraft.blocks.WoolFurnace;
 
-@Mod(Reference.MOD_ID)
+@Mod(NerdCraft.MOD_ID)
 public class NerdCraft {
+    public static final String MOD_ID = "nerdingcraft";
     public static Logger LOGGER = LogUtils.getLogger();
 
     // Registries
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
-            Reference.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, Reference.MOD_ID);
+            NerdCraft.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerdCraft.MOD_ID);
 
     // Static registry objects
     public static final RegistryObject<Block> SMILING_BLOCK = BLOCKS.register("smiling_block",
