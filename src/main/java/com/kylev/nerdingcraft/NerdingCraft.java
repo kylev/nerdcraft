@@ -16,15 +16,15 @@ import net.minecraftforge.registries.RegistryObject;
 
 import com.kylev.nerdingcraft.blocks.WoolFurnace;
 
-@Mod(NerdCraft.MOD_ID)
-public class NerdCraft {
+@Mod(NerdingCraft.MOD_ID)
+public class NerdingCraft {
     public static final String MOD_ID = "nerdingcraft";
     public static Logger LOGGER = LogUtils.getLogger();
 
     // Registries
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
-            NerdCraft.MOD_ID);
-    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerdCraft.MOD_ID);
+            NerdingCraft.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerdingCraft.MOD_ID);
 
     // Static registry objects
     public static final RegistryObject<Block> SMILING_BLOCK = BLOCKS.register("smiling_block",
@@ -36,8 +36,8 @@ public class NerdCraft {
     public static final RegistryObject<Item> WOOL_FURNACE_ITEM = ITEMS.register("wool_furnace",
             () -> new BlockItem(WOOL_FURNACE.get(), new Item.Properties().stacksTo(16)));
 
-    public NerdCraft(FMLJavaModLoadingContext context) {
-        LOGGER.info("NerdCraft constructor");
+    public NerdingCraft(FMLJavaModLoadingContext context) {
+        LOGGER.info("NerdingCraft constructor");
         IEventBus modEventBus = context.getModEventBus();
 
         BLOCKS.register(modEventBus);
