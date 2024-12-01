@@ -1,34 +1,46 @@
 package com.kylev.nerdingcraft;
 
-import com.kylev.nerdingcraft.blocks.SmilingBlock;
-import com.kylev.nerdingcraft.blocks.WoolFurnace;
-import com.kylev.nerdingcraft.configuration.ConfigurationHandler;
-import com.kylev.nerdingcraft.proxy.IProxy;
-import com.kylev.nerdingcraft.reference.Reference;
-import net.minecraft.block.Block;
+import org.slf4j.Logger;
+import com.mojang.logging.LogUtils;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import org.apache.logging.log4j.Logger;
+import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
 
-@Mod(modid = Reference.MOD_ID, name = Reference.MOD_NAME, version = Reference.VERSION, acceptedMinecraftVersions = "[1.12.2]")
+import com.kylev.nerdingcraft.blocks.WoolFurnace;
+
+@Mod(NerdCraft.MOD_ID)
 public class NerdCraft {
-    @Mod.Instance(Reference.MOD_ID)
-    public static NerdCraft instance;
+    public static final String MOD_ID = "nerdingcraft";
+    public static Logger LOGGER = LogUtils.getLogger();
 
-    @SidedProxy(clientSide = Reference.CLIENT_PROXY_CLASS, serverSide = Reference.SERVER_PROXY_CLASS)
-    public static IProxy proxy;
+    // Registries
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS,
+            NerdCraft.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, NerdCraft.MOD_ID);
 
-    public static final Block smilingBlock = new SmilingBlock();
-    public static final Block woolFurnace = new WoolFurnace();
+    // Static registry objects
+    public static final RegistryObject<Block> SMILING_BLOCK = BLOCKS.register("smiling_block",
+            () -> new Block(BlockBehaviour.Properties.of().mapColor(MapColor.ICE)));
+    public static final RegistryObject<Item> SMILING_BLOCK_ITEM = ITEMS.register("smiling_block",
+            () -> new BlockItem(SMILING_BLOCK.get(), new Item.Properties().stacksTo(64)));
+    public static final RegistryObject<Block> WOOL_FURNACE = BLOCKS.register("wool_furnace",
+            () -> new WoolFurnace(BlockBehaviour.Properties.of().mapColor(MapColor.LAPIS)));
+    public static final RegistryObject<Item> WOOL_FURNACE_ITEM = ITEMS.register("wool_furnace",
+            () -> new BlockItem(WOOL_FURNACE.get(), new Item.Properties().stacksTo(16)));
 
-    public static Logger logger;
+    public NerdCraft(FMLJavaModLoadingContext context) {
+        LOGGER.info("NerdCraft constructor");
+        IEventBus modEventBus = context.getModEventBus();
 
-    @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event) {
-        logger = event.getModLog();
-        logger.info("FML pre init");
-        proxy.preInit(event);
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
+        BLOCKS.register(modEventBus);
+        ITEMS.register(modEventBus);
     }
 }

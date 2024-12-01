@@ -1,8 +1,7 @@
 {
-  "parent": "block/orientable",
+  "parent": "block/furnace",
   "textures": {
-    "top": "blocks/gold_block",
-    "front": "nerdingcraft:blocks/wool_furnace",
-    "side": "blocks/gold_block"
+    "top": "block/white_wool",
+    "front": "nerdingcraft:block/wool_furnace"
   }
 }

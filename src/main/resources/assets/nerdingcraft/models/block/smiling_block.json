@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "nerdingcraft:blocks/smiling_block"
+    "all": "nerdingcraft:block/smiling_block"
   }
 }
