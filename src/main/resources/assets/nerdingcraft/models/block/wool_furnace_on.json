@@ -1,0 +1,6 @@
+{
+    "parent": "nerdingcraft:block/wool_furnace",
+    "textures": {
+      "top": "block/blue_wool"
+    }
+  }

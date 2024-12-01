@@ -1,14 +1,36 @@
 {
   "variants": {
-    "facing=east": {
+    "facing=north,lit=false": {
+      "model": "nerdingcraft:block/wool_furnace"
+    },
+    "facing=north,lit=true": {
+      "model": "nerdingcraft:block/wool_furnace_on"
+    },
+
+    "facing=east,lit=false": {
+      "model": "nerdingcraft:block/wool_furnace",
       "y": 90
     },
-    "facing=north": {
+    "facing=east,lit=true": {
+      "model": "nerdingcraft:block/wool_furnace_on",
+      "y": 90
     },
-    "facing=south": {
+
+    "facing=south,lit=false": {
+      "model": "nerdingcraft:block/wool_furnace",
       "y": 180
     },
-    "facing=west": {
+    "facing=south,lit=true": {
+      "model": "nerdingcraft:block/wool_furnace_on",
+      "y": 180
+    },
+
+    "facing=west,lit=false": {
+      "model": "nerdingcraft:block/wool_furnace",
+      "y": 270
+    },
+    "facing=west,lit=true": {
+      "model": "nerdingcraft:block/wool_furnace_on",
       "y": 270
     }
   }
