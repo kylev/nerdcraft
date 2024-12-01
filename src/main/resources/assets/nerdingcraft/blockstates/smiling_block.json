@@ -1,7 +1,7 @@
 {
   "variants": {
-    "normal": {
-      "model": "nerdingcraft:smiling_block"
+    "": {
+      "model": "nerdingcraft:block/smiling_block"
     }
   }
 }
