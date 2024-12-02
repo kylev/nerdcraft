@@ -1,6 +1,7 @@
 # IDE Cruft
 eclipse/
 .idea/
+.vscode/launch.json
 classes/
 *.iml
 *.ipr
