@@ -2,12 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " B",
-    "BB"
+    "WWW",
+    "C C",
+    "CCC"
   ],
   "key": {
-    "B": {
-      "item": "minecraft:stick"
+    "W": {
+      "tag": "minecraft:wool"
+    },
+    "C": {
+      "item": "minecraft:cobblestone"
     }
   },
   "result": {
