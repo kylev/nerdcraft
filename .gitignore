@@ -2,6 +2,7 @@
 eclipse/
 .idea/
 .vscode/launch.json
+.vscode/tasks.json
 classes/
 *.iml
 *.ipr
